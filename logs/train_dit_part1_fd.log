@@ -1,0 +1,48 @@
+======================================================================
+  BS8414 FunDiff surrogate — Stage 2: latent DiT (rectified flow)
+======================================================================
+  excluded: BS8414_DCLG_Test7 (declares insulation system PF like 33 other decks, but its Phenolic_Foam MATL is inert - HEAT_OF_REACTION absent (0 kJ/kg) with REFERENCE_TEMPERATURE=429 degC - where every other PF deck decomposes at HEAT_OF_REACTION=400 with no explicit reference temperature (cp 1.2 vs 1.5, k 0.020 vs 0.022, rho 32 vs 39). Same defect class as the debug case above: a different system under the same name. Found 2026-08-19 by explain_part1.check_group_determinism, which verifies that an insulation id fixes its material block; this was the only violation in 185 cases)
+    loaded 25/184
+    loaded 50/184
+    loaded 75/184
+    loaded 100/184
+    loaded 125/184
+    loaded 150/184
+    loaded 175/184
+  184 cases, fields (184, 5, 181, 128, 64) float16 (2.54 GB)
+  norm stats fitted on 141 training sims (global mean 109.1 degC, sd 201.6)
+  [train] 557 functions (141 sims, 3.30 GB in RAM)
+  [valid] 84 functions (20 sims, 0.50 GB in RAM)
+  [test] 95 functions (23 sims, 0.56 GB in RAM)
+  Train latents: (557, 128, 256)  (mu=-0.024 sd=1.700)
+  DiT params: 7,815,640
+
+  Ep   1  T:3.8919  V(ema):3.8940  lr:9.50e-06
+  Ep  50  T:0.2257  V(ema):3.6989  lr:4.50e-04
+  Ep 100  T:0.1488  V(ema):2.2678  lr:9.00e-04
+  Ep 150  T:0.1155  V(ema):1.0774  lr:9.64e-04
+  Ep 200  T:0.1034  V(ema):0.5826  lr:9.19e-04
+  Ep 250  T:0.0908  V(ema):0.3330  lr:8.77e-04
+  Ep 300  T:0.0861  V(ema):0.2051  lr:8.36e-04
+  Ep 350  T:0.0862  V(ema):0.1454  lr:7.97e-04
+  Ep 400  T:0.0877  V(ema):0.1165  lr:7.60e-04
+  Ep 450  T:0.0829  V(ema):0.1021  lr:7.25e-04
+  Ep 500  T:0.0743  V(ema):0.0942  lr:6.92e-04
+  Ep 550  T:0.0808  V(ema):0.0898  lr:6.60e-04
+  Ep 600  T:0.0760  V(ema):0.0870  lr:6.29e-04
+  Ep 650  T:0.0720  V(ema):0.0851  lr:6.00e-04
+  Ep 700  T:0.0740  V(ema):0.0837  lr:5.72e-04
+  Ep 750  T:0.0829  V(ema):0.0828  lr:5.46e-04
+  Ep 800  T:0.0732  V(ema):0.0822  lr:5.20e-04
+  Ep 850  T:0.0693  V(ema):0.0819  lr:4.96e-04
+  Ep 900  T:0.0753  V(ema):0.0818  lr:4.73e-04
+  Ep 950  T:0.0706  V(ema):0.0817  lr:4.51e-04
+  Ep1000  T:0.0620  V(ema):0.0818  lr:4.30e-04
+  Ep1050  T:0.0727  V(ema):0.0820  lr:4.11e-04
+  Ep1100  T:0.0666  V(ema):0.0822  lr:3.92e-04
+  Ep1150  T:0.0639  V(ema):0.0826  lr:3.73e-04
+  Ep1200  T:0.0707  V(ema):0.0829  lr:3.56e-04
+  Early stop at ep 1241.
+
+  Best valid rf-loss: 0.0817  (1456s)
+  Saved -> D:\VS_projects\bs8414_fundiff_surrogate\models_part1_fundiff_r1\dit_best.pt

@@ -1,0 +1,130 @@
+# BS 8414 surrogate project — git ignores
+#
+# Written once and copied into every surrogate project (see APPS.md). What is
+# kept out is what training regenerates: weights, extracted arrays, rendered
+# figures, and the venv. What is kept IN is everything that records a decision —
+# source, configs, run logs, results notes, and the shipped app asset table.
+#
+# Nothing here deletes anything; git only stops tracking these paths.
+
+# ── environment ───────────────────────────────────────────────────────────
+# Each project has its own venv and they are never shared. Torch + CUDA wheels
+# are several GB and are reinstalled from requirements.txt, not from git.
+venv/
+.venv/
+env/
+pip-wheel-metadata/
+
+# ── python bytecode / tooling caches ──────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ── model checkpoints ─────────────────────────────────────────────────────
+# The weights themselves, wherever they sit: 3 MB (thermocouple member) to
+# 34 MB (FunDiff DiT) each, across hundreds of models*/ run directories. A
+# checkpoint is reproducible from its seed + config.
+#
+# Ignored BY EXTENSION, not by directory, and that is deliberate: git cannot
+# re-include a file inside an excluded directory, so a `models_*/` rule would
+# also bury evaluation_part1.json, metrics.json, run_summary.json and
+# history_member*.json — the small files that carry the score and the training
+# curve for every run. Those are the provenance of every number in
+# PART1_RESULTS.md, so they stay tracked while the weights beside them do not.
+#
+# By extension, the `model/` package and `model*.py` modules (model.py,
+# model_part1.py, model/fae.py, model/dit.py) are untouched source.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+
+# ── extracted / cached arrays ─────────────────────────────────────────────
+# data/part1_slices alone is ~1.01 GB (185 cases). Regenerate with
+# extract_slices_part1.py (~50 min, restartable), never from git.
+data/
+*.npz
+*.npy
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# ── generated outputs ─────────────────────────────────────────────────────
+# Rendered by evaluate/validate/plot scripts from the checkpoints above.
+outputs/
+outputs_*/
+figures/
+fields/
+*.mp4
+*.gif
+
+# ── keep: the ONE deployment model each Streamlit app serves ──────────────
+# Chosen and justified by ..\select_best_model.py, which also writes the
+# matching app_assets/selected_model.json. These are the only weights a fresh
+# clone needs to make a prediction; every other run above stays ignored.
+# A path that does not exist in a given project is simply inert, which is what
+# keeps this file byte-identical across all of them.
+#   KAN          models_part1_r4_seed48    combined valid+test TC R2 0.8526
+#   MLP          models_part1_bal_s61_r2   combined valid+test TC R2 0.8096
+#   FunDiff      models_part1_fundiff_r1   test DiT(gen) R2 0.8658
+#   FunDiff-KAN  models_part1_fundiff_r1   test DiT(gen) R2 0.8740
+# 139.5 MB in total (KAN 9.8, MLP 9.8, FunDiff 58.6, FunDiff-KAN 61.3), largest
+# single file 32.5 MB. Every file is under GitHub's 50 MB warning and its 100 MB
+# hard limit, but the repo grows by ~140 MB per selection change, so use git-lfs
+# if the destination repo will see several.
+!models_part1_r4_seed48/part1_member*.pt
+!models_part1_bal_s61_r2/part1_member*.pt
+!models_part1_fundiff_r1/fae_best.pt
+!models_part1_fundiff_r1/dit_best.pt
+
+# ── keep: the shipped Streamlit asset table ───────────────────────────────
+# Small, exact, and required to run the app on a machine without the FDS
+# corpus. Re-exported by ..\export_app_assets.py. Stated explicitly so both
+# survive if a broader data/asset rule is ever added above.
+!app_assets/
+!app_assets/part1_materials.json
+!app_assets/selected_model.json
+
+# ── run logs: TRACKED on purpose ──────────────────────────────────────────
+# ~7.6 MB of plain text across all projects, and it is the experimental record —
+# PART1_RESULTS.md and VARIANCE_RECORD.md quote per-member best-valid-loss and
+# stop-epoch numbers straight out of these files, and runs are versioned as
+# paired .log/.err.log rather than as git branches. Losing them loses the
+# provenance of every reported number.
+# Uncomment the two lines below if a repo ever needs them out.
+# *.log
+# *.err.log
+
+# ── editors / OS ──────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*~
+Thumbs.db
+desktop.ini
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── agent working notes ───────────────────────────────────────────────────
+# CLAUDE.md is the working brief for this repo's own agent sessions: internal
+# conventions, non-negotiables and in-progress reasoning. It is not part of the
+# published artefact and is deliberately untracked. README.md carries everything
+# a reader of the repository needs.
+CLAUDE.md
+**/CLAUDE.md
+.claude/
+
+# ── secrets ───────────────────────────────────────────────────────────────
+.env
+*.key
+*.pem

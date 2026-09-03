@@ -1,0 +1,42 @@
+======================================================================
+  BS8414 FunDiff surrogate — Evaluation (conditional-mean readout)
+======================================================================
+  Loaded FAE (7,526,401 p) + DiT (7,815,640 p)
+  excluded: BS8414_DCLG_Test7 (declares insulation system PF like 33 other decks, but its Phenolic_Foam MATL is inert - HEAT_OF_REACTION absent (0 kJ/kg) with REFERENCE_TEMPERATURE=429 degC - where every other PF deck decomposes at HEAT_OF_REACTION=400 with no explicit reference temperature (cp 1.2 vs 1.5, k 0.020 vs 0.022, rho 32 vs 39). Same defect class as the debug case above: a different system under the same name. Found 2026-08-19 by explain_part1.check_group_determinism, which verifies that an insulation id fixes its material block; this was the only violation in 185 cases)
+    loaded 25/184
+    loaded 50/184
+    loaded 75/184
+    loaded 100/184
+    loaded 125/184
+    loaded 150/184
+    loaded 175/184
+  184 cases, fields (184, 5, 181, 128, 64) float16 (2.54 GB)
+  norm stats fitted on 141 training sims (global mean 109.1 degC, sd 201.6)
+  [train] 557 functions (141 sims, 3.30 GB in RAM)
+  [valid] 84 functions (20 sims, 0.50 GB in RAM)
+  [test] 95 functions (23 sims, 0.56 GB in RAM)
+
+  FAE(recon) — encode GT -> decode  [Stage-1 upper bound]
+  Slice                    R2   RMSE(C)   MAE(C)    SSIM
+  ------------------------------------------------------
+  Main_external        0.8734     89.07    43.11   0.695
+  Wing_cavity          0.6906     57.98     9.99   0.914
+  Wing_external        0.8124     39.25    11.99   0.825
+  Main_cavity          0.8701     91.25    43.41   0.703
+  Mid_section          0.9035     63.14    22.81   0.838
+  GLOBAL               0.8778     69.70    26.17
+
+  DiT(gen) — sample latent -> decode  [full FunDiff]
+  Slice                    R2   RMSE(C)   MAE(C)    SSIM
+  ------------------------------------------------------
+  Main_external        0.8600     93.64    45.69   0.685
+  Wing_cavity          0.6849     58.52    12.00   0.895
+  Wing_external        0.7277     47.29    14.16   0.813
+  Main_cavity          0.8581     95.37    45.68   0.695
+  Mid_section          0.8987     64.68    23.36   0.835
+  GLOBAL               0.8644     73.42    28.04
+
+  Metrics -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\evaluation\metrics.json
+  Saved 6 pred/true field pairs -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\fields
+  Render Smokeview-style output with:  python smokeview_output.py
+======================================================================

@@ -1,0 +1,47 @@
+======================================================================
+  BS8414 FunDiff surrogate — Stage 1: Function Autoencoder
+======================================================================
+Device: cuda (NVIDIA GeForce RTX 4090)
+  [train] 125 functions (25 sims, 0.74 GB in RAM)
+  [valid] 40 functions (8 sims, 0.24 GB in RAM)
+  [test] 20 functions (4 sims, 0.12 GB in RAM)
+  FAE params: 7,526,401
+  Train 125  Valid 40  Test 20 functions
+
+  Ep   1 T:1.1337 V:0.9618 | mse:1.0016 ssim:0.879 grow:0.0135 eng:0.0197 lr:5.67e-05
+  Ep  10 T:1.0936 V:0.8718 | mse:0.9819 ssim:0.743 grow:0.0070 eng:0.0341 lr:5.37e-04
+  Ep  20 T:1.0862 V:0.8872 | mse:0.9738 ssim:0.749 grow:0.0097 eng:0.0083 lr:9.99e-04
+  Ep  30 T:1.0594 V:0.8852 | mse:0.9439 ssim:0.768 grow:0.0332 eng:0.0000 lr:9.91e-04
+  Ep  40 T:0.9800 V:0.9100 | mse:0.8719 ssim:0.718 grow:0.0380 eng:0.0030 lr:9.82e-04
+  Ep  50 T:0.9356 V:0.8949 | mse:0.8277 ssim:0.716 grow:0.0423 eng:0.0000 lr:9.74e-04
+  Ep  60 T:0.8624 V:0.8726 | mse:0.7581 ssim:0.690 grow:0.0539 eng:0.0353 lr:9.66e-04
+  Ep  70 T:0.7010 V:0.8644 | mse:0.6094 ssim:0.608 grow:0.0450 eng:0.0009 lr:9.58e-04
+  Ep  80 T:0.6236 V:0.8250 | mse:0.5389 ssim:0.561 grow:0.0399 eng:0.0276 lr:9.50e-04
+  Ep  90 T:0.5313 V:0.7506 | mse:0.4519 ssim:0.527 grow:0.0361 eng:0.0094 lr:9.42e-04
+  Ep 100 T:0.5095 V:0.6809 | mse:0.4294 ssim:0.530 grow:0.0385 eng:0.0432 lr:9.34e-04
+  Ep 110 T:0.4842 V:0.6206 | mse:0.4066 ssim:0.515 grow:0.0365 eng:0.0000 lr:9.26e-04
+  Ep 120 T:0.4494 V:0.5610 | mse:0.3708 ssim:0.521 grow:0.0387 eng:0.0305 lr:9.18e-04
+  Ep 130 T:0.4417 V:0.5035 | mse:0.3685 ssim:0.485 grow:0.0386 eng:0.0258 lr:9.10e-04
+  Ep 140 T:0.3967 V:0.4769 | mse:0.3269 ssim:0.463 grow:0.0391 eng:0.0013 lr:9.03e-04
+  Ep 150 T:0.3861 V:0.4459 | mse:0.3154 ssim:0.469 grow:0.0393 eng:0.0000 lr:8.95e-04
+  Ep 160 T:0.3781 V:0.4116 | mse:0.3088 ssim:0.458 grow:0.0397 eng:0.0306 lr:8.88e-04
+  Ep 170 T:0.3719 V:0.3935 | mse:0.3058 ssim:0.438 grow:0.0376 eng:0.0044 lr:8.80e-04
+  Ep 180 T:0.3168 V:0.3866 | mse:0.2514 ssim:0.434 grow:0.0400 eng:0.0000 lr:8.73e-04
+  Ep 190 T:0.2993 V:0.3697 | mse:0.2333 ssim:0.437 grow:0.0367 eng:0.0201 lr:8.66e-04
+  Ep 200 T:0.3011 V:0.3652 | mse:0.2385 ssim:0.415 grow:0.0370 eng:0.0040 lr:8.58e-04
+  Ep 210 T:0.3019 V:0.3589 | mse:0.2357 ssim:0.437 grow:0.0368 eng:0.0433 lr:8.51e-04
+  Ep 220 T:0.2804 V:0.3688 | mse:0.2187 ssim:0.408 grow:0.0381 eng:0.0123 lr:8.44e-04
+  Ep 230 T:0.3062 V:0.3500 | mse:0.2408 ssim:0.433 grow:0.0377 eng:0.0113 lr:8.37e-04
+  Ep 240 T:0.2727 V:0.3523 | mse:0.2097 ssim:0.417 grow:0.0358 eng:0.0182 lr:8.30e-04
+  Ep 250 T:0.2678 V:0.3441 | mse:0.2097 ssim:0.384 grow:0.0359 eng:0.0283 lr:8.23e-04
+  Ep 260 T:0.2729 V:0.3543 | mse:0.2119 ssim:0.404 grow:0.0374 eng:0.0107 lr:8.16e-04
+  Ep 270 T:0.2642 V:0.3492 | mse:0.2041 ssim:0.399 grow:0.0366 eng:0.0020 lr:8.09e-04
+  Ep 280 T:0.2697 V:0.3443 | mse:0.2080 ssim:0.407 grow:0.0364 eng:0.0374 lr:8.02e-04
+  Ep 290 T:0.2689 V:0.3585 | mse:0.2081 ssim:0.401 grow:0.0352 eng:0.0407 lr:7.96e-04
+  Ep 300 T:0.3032 V:0.3576 | mse:0.2411 ssim:0.411 grow:0.0352 eng:0.0189 lr:7.89e-04
+  Early stop at ep 303.
+
+  Best valid MSE: 0.3377  (1638s)
+  Saved -> D:\VS_projects\bs8414_fundiff_surrogate\models\fae_best.pt
+  FAE full-grid reconstruction R2 [valid]: 0.6038
+  FAE full-grid reconstruction R2 [test]: 0.7970

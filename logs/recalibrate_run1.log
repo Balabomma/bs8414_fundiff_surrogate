@@ -1,0 +1,12 @@
+======================================================================
+  FunDiff generative — post-hoc temperature recalibration (valid-fit)
+======================================================================
+  [train] 125 functions (25 sims, 0.74 GB in RAM)
+  [valid] 40 functions (8 sims, 0.24 GB in RAM)
+  [test] 20 functions (4 sims, 0.12 GB in RAM)
+
+  FunDiff generative: temperature s = 221.490 (fit on valid)
+    raw   : cov1=0.373 cov2=0.604 miscal=0.250 NLL=389.58
+    recal : cov1=0.998 cov2=1.000 miscal=0.479 NLL=8.48
+
+  -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\evaluation\uq_recalibrated.json

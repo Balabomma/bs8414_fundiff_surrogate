@@ -1,0 +1,62 @@
+======================================================================
+  FunDiff generative UQ  (24 samples/case)
+======================================================================
+  [train] 125 functions (25 sims, 0.74 GB in RAM)
+  [valid] 40 functions (8 sims, 0.24 GB in RAM)
+  [test] 20 functions (4 sims, 0.12 GB in RAM)
+
+  Per-slice generative-UQ calibration (test set):
+  Main_external
+    RMSE                : 112.65 degC
+    Coverage @1sigma    : 0.275  (ideal 0.683)
+    Coverage @2sigma    : 0.551  (ideal 0.954)
+    Sharpness (mean std): 46.96 degC
+    Gaussian NLL        : 160.896
+    Error<->unc corr    : 0.666  (>0 = useful)
+    Miscalibration area : 0.2894  (0 = perfect)
+  Wing_cavity
+    RMSE                : 72.14 degC
+    Coverage @1sigma    : 0.355  (ideal 0.683)
+    Coverage @2sigma    : 0.657  (ideal 0.954)
+    Sharpness (mean std): 23.75 degC
+    Gaussian NLL        : 80.329
+    Error<->unc corr    : 0.633  (>0 = useful)
+    Miscalibration area : 0.2419  (0 = perfect)
+  Wing_external
+    RMSE                : 71.66 degC
+    Coverage @1sigma    : 0.469  (ideal 0.683)
+    Coverage @2sigma    : 0.684  (ideal 0.954)
+    Sharpness (mean std): 26.75 degC
+    Gaussian NLL        : 504.554
+    Error<->unc corr    : 0.639  (>0 = useful)
+    Miscalibration area : 0.2052  (0 = perfect)
+  Main_cavity
+    RMSE                : 118.84 degC
+    Coverage @1sigma    : 0.239  (ideal 0.683)
+    Coverage @2sigma    : 0.517  (ideal 0.954)
+    Sharpness (mean std): 44.30 degC
+    Gaussian NLL        : 168.624
+    Error<->unc corr    : 0.675  (>0 = useful)
+    Miscalibration area : 0.3141  (0 = perfect)
+  Mid_section
+    RMSE                : 75.21 degC
+    Coverage @1sigma    : 0.461  (ideal 0.683)
+    Coverage @2sigma    : 0.661  (ideal 0.954)
+    Sharpness (mean std): 30.72 degC
+    Gaussian NLL        : 1055.033
+    Error<->unc corr    : 0.496  (>0 = useful)
+    Miscalibration area : 0.1987  (0 = perfect)
+
+  GLOBAL
+    RMSE                : 92.53 degC
+    Coverage @1sigma    : 0.360  (ideal 0.683)
+    Coverage @2sigma    : 0.614  (ideal 0.954)
+    Sharpness (mean std): 34.50 degC
+    Gaussian NLL        : 393.887
+    Error<->unc corr    : 0.644  (>0 = useful)
+    Miscalibration area : 0.2499  (0 = perfect)
+
+  UQ metrics -> outputs/evaluation/uq_metrics.json
+  Saved 6 mean/std/true field sets -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\uq
+  Overlay with:  python smokeview_output.py --uq
+======================================================================

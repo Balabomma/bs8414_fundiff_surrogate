@@ -1,0 +1,26 @@
+{
+ "schema": "bs8414-part1-selected-model/1",
+ "generated_utc": "2026-09-01T18:07:42Z",
+ "kind": "slice",
+ "selected": "models_part1_fundiff_r1",
+ "files": [
+  "fae_best.pt",
+  "dit_best.pt"
+ ],
+ "criterion": "test DiT(gen) global R2 (metrics.json), hash split only",
+ "metrics": {
+  "dit_gen_r2": 0.8657986244721096,
+  "dit_gen_rmse_degC": 73.04209950312125,
+  "fae_recon_r2": 0.8763490363093387
+ },
+ "score": 0.8657986244721096,
+ "n_candidates": 2,
+ "runner_up": "models_part1_fundiff_r2",
+ "runner_up_score": 0.8644095208045711,
+ "margin": 0.001389103667538527,
+ "separated_beyond_noise": false,
+ "noise_band": 0.02,
+ "validation_only_winner": null,
+ "validation_agrees": null,
+ "validation_note": "metrics.json records no separate validation split; fae_recon_r2 is a Stage-1 upper bound on the same test functions, not a selection signal"
+}

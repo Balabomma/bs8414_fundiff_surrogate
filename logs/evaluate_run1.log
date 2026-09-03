@@ -1,0 +1,32 @@
+======================================================================
+  BS8414 FunDiff surrogate — Evaluation (conditional-mean readout)
+======================================================================
+  Loaded FAE (7,526,401 p) + DiT (7,806,880 p)
+  [train] 125 functions (25 sims, 0.74 GB in RAM)
+  [valid] 40 functions (8 sims, 0.24 GB in RAM)
+  [test] 20 functions (4 sims, 0.12 GB in RAM)
+
+  FAE(recon) — encode GT -> decode  [Stage-1 upper bound]
+  Slice                    R2   RMSE(C)   MAE(C)    SSIM
+  ------------------------------------------------------
+  Main_external        0.8340     95.19    52.37   0.535
+  Wing_cavity          0.6659     65.34    24.13   0.652
+  Wing_external        0.6964     64.34    23.79   0.660
+  Main_cavity          0.8132     99.68    54.09   0.532
+  Mid_section          0.8447     74.95    33.37   0.692
+  GLOBAL               0.8173     81.27    37.55
+
+  DiT(gen) — sample latent -> decode  [full FunDiff]
+  Slice                    R2   RMSE(C)   MAE(C)    SSIM
+  ------------------------------------------------------
+  Main_external        0.8310     96.05    52.73   0.537
+  Wing_cavity          0.6602     65.89    25.50   0.642
+  Wing_external        0.6633     67.75    24.89   0.637
+  Main_cavity          0.8043    102.05    55.17   0.534
+  Mid_section          0.8294     78.55    37.23   0.654
+  GLOBAL               0.8078     83.36    39.11
+
+  Metrics -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\evaluation\metrics.json
+  Saved 6 pred/true field pairs -> D:\VS_projects\bs8414_fundiff_surrogate\outputs\fields
+  Render Smokeview-style output with:  python smokeview_output.py
+======================================================================

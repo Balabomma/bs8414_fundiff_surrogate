@@ -1,0 +1,29 @@
+# bs8414_fundiff_surrogate — Python dependencies
+#
+# Pinned to the versions this project's own venv actually runs (verified
+# 2026-09-03). Every project here has its OWN venv; they are never shared, and the
+# two model families are deliberately on different torch builds.
+#
+# PyTorch is NOT installed from this file — it needs the CUDA wheel index:
+#
+#   python -m venv venv
+#   .\venv\Scripts\activate
+#   pip install torch==2.11.0+cu128 --index-url https://download.pytorch.org/whl/cu128
+#   pip install -r requirements.txt
+#
+# Verify the GPU is actually being used before training:
+#   python -c "import torch; print(torch.__version__, torch.cuda.is_available())"
+# Target hardware: NVIDIA RTX 4090 (24 GB); config sets DEVICE = "cuda".
+# Python 3.12.9.
+
+# No FNO / PhysicsNeMo / mamba-ssm dependency: FunDiff is pure PyTorch
+# (attention only). Smokeview-style output reuses the sibling `pysmokview`
+# package via sys.path at runtime; it needs only numpy/matplotlib/tqdm.
+
+numpy==2.5.1        # arrays throughout
+scipy==1.18.0       # interpolation and stats in the evaluators
+matplotlib==3.11.1  # field renders, figures and the app plots
+pillow==12.3.0      # GIF/PNG export
+tqdm==4.69.0        # training and decode progress
+pandas==3.0.5       # the app tables only, not the training pipeline
+streamlit==1.63.0   # the Part1 slice app (app_fundiff_part1.py)

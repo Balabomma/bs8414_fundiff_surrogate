@@ -1,0 +1,574 @@
+{
+ "schema": "bs8414-part1-app-assets/1",
+ "generated_utc": "2026-09-01T17:12:52Z",
+ "corpus": "D:\\Bs8414_05052026\\Part1\\_completed",
+ "n_simulations": 187,
+ "material_features": [
+  "core_specific_heat",
+  "core_conductivity",
+  "core_density",
+  "core_heat_of_reaction",
+  "core_ref_temperature",
+  "core_is_reactive",
+  "ins_specific_heat",
+  "ins_conductivity",
+  "ins_density",
+  "ins_heat_of_reaction",
+  "ins_ref_temperature",
+  "reac_heat_of_combustion",
+  "reac_soot_yield"
+ ],
+ "core_idx": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+ ],
+ "ins_idx": [
+  6,
+  7,
+  8,
+  9,
+  10
+ ],
+ "reac_idx": [
+  11,
+  12
+ ],
+ "t_ambient_c": 18.0,
+ "t_end_s": 1800.0,
+ "n_timesteps": 181,
+ "geometry_names": {
+  "0": "baseline",
+  "1": "noair",
+  "2": "nogap",
+  "3": "noair_nogap",
+  "4": "nocb",
+  "5": "noair_nocb",
+  "6": "nogap_nocb",
+  "7": "noair_nogap_nocb"
+ },
+ "n_geometry": 8,
+ "cladding": {
+  "ACM_A2": {
+   "id": 0,
+   "core_matl": "ACM_A2_CORE",
+   "core": {
+    "core_specific_heat": 1.1,
+    "core_conductivity": 0.5,
+    "core_density": 1900.0,
+    "core_heat_of_reaction": 0.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 0.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 0.0,
+    "reac_soot_yield": 0.0
+   },
+   "n_decks": 27
+  },
+  "ACM_PE": {
+   "id": 1,
+   "core_matl": "Core_MATERIAL",
+   "core": {
+    "core_specific_heat": 3.0,
+    "core_conductivity": 0.38,
+    "core_density": 1360.0,
+    "core_heat_of_reaction": 2300.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 41000.0,
+    "reac_soot_yield": 0.06
+   },
+   "n_decks": 27
+  },
+  "AL": {
+   "id": 2,
+   "core_matl": "ALUMINIUM_1050",
+   "core": {
+    "core_specific_heat": 0.9,
+    "core_conductivity": 235.0,
+    "core_density": 2659.0,
+    "core_heat_of_reaction": 0.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 0.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 0.0,
+    "reac_soot_yield": 0.0
+   },
+   "n_decks": 27
+  },
+  "BRK": {
+   "id": 3,
+   "core_matl": "RED_CLAY_BRICK",
+   "core": {
+    "core_specific_heat": 0.9,
+    "core_conductivity": 1.0,
+    "core_density": 2101.0,
+    "core_heat_of_reaction": 0.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 0.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 0.0,
+    "reac_soot_yield": 0.0
+   },
+   "n_decks": 27
+  },
+  "CDR": {
+   "id": 4,
+   "core_matl": "CEDAR",
+   "core": {
+    "core_specific_heat": 1.5,
+    "core_conductivity": 0.1,
+    "core_density": 413.0,
+    "core_heat_of_reaction": 200.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 14000.0,
+    "reac_soot_yield": 0.018
+   },
+   "n_decks": 25
+  },
+  "HPL": {
+   "id": 5,
+   "core_matl": "HPL",
+   "core": {
+    "core_specific_heat": 1.6,
+    "core_conductivity": 0.3,
+    "core_density": 1449.0,
+    "core_heat_of_reaction": 300.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 17000.0,
+    "reac_soot_yield": 0.03
+   },
+   "n_decks": 17
+  },
+  "OSB": {
+   "id": 6,
+   "core_matl": "OSB",
+   "core": {
+    "core_specific_heat": 1.5,
+    "core_conductivity": 0.13,
+    "core_density": 621.0,
+    "core_heat_of_reaction": 250.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 15500.0,
+    "reac_soot_yield": 0.015
+   },
+   "n_decks": 11
+  },
+  "PLY": {
+   "id": 7,
+   "core_matl": "PLYWOOD",
+   "core": {
+    "core_specific_heat": 2.2,
+    "core_conductivity": 0.22,
+    "core_density": 550.0,
+    "core_heat_of_reaction": 300.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 14500.0,
+    "reac_soot_yield": 0.015
+   },
+   "n_decks": 11
+  },
+  "DCLG_Test1_adv": {
+   "id": 8,
+   "core_matl": "Core_MATERIAL",
+   "core": {
+    "core_specific_heat": 3.0,
+    "core_conductivity": 0.38,
+    "core_density": 1360.0,
+    "core_heat_of_reaction": 2300.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 41000.0,
+    "reac_soot_yield": 0.06
+   },
+   "n_decks": 7
+  },
+  "DCLG_Test3": {
+   "id": 9,
+   "core_matl": "Core_MATERIAL",
+   "core": {
+    "core_specific_heat": 1.7,
+    "core_conductivity": 0.25,
+    "core_density": 1200.0,
+    "core_heat_of_reaction": 0.0,
+    "core_ref_temperature": 390.0,
+    "core_is_reactive": 1.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 28000.0,
+    "reac_soot_yield": 0.1
+   },
+   "n_decks": 7
+  },
+  "DCLG_Test5": {
+   "id": 10,
+   "core_matl": "Core_MATERIAL",
+   "core": {
+    "core_specific_heat": 0.9,
+    "core_conductivity": 0.25,
+    "core_density": 1900.0,
+    "core_heat_of_reaction": 0.0,
+    "core_ref_temperature": 0.0,
+    "core_is_reactive": 0.0
+   },
+   "reac": {
+    "reac_heat_of_combustion": 0.0,
+    "reac_soot_yield": 0.0
+   },
+   "n_decks": 1
+  }
+ },
+ "insulation": {
+  "MW": {
+   "id": 0,
+   "ins_matl": "MW_RWA45",
+   "ins": {
+    "ins_specific_heat": 0.84,
+    "ins_conductivity": 0.037,
+    "ins_density": 47.0,
+    "ins_heat_of_reaction": 0.0,
+    "ins_ref_temperature": 0.0
+   },
+   "n_decks": 38
+  },
+  "MWBC": {
+   "id": 1,
+   "ins_matl": "MW_BEAMCLAD",
+   "ins": {
+    "ins_specific_heat": 0.84,
+    "ins_conductivity": 0.035,
+    "ins_density": 162.0,
+    "ins_heat_of_reaction": 0.0,
+    "ins_ref_temperature": 0.0
+   },
+   "n_decks": 38
+  },
+  "PF": {
+   "id": 2,
+   "ins_matl": "PF",
+   "ins": {
+    "ins_specific_heat": 1.5,
+    "ins_conductivity": 0.022,
+    "ins_density": 39.0,
+    "ins_heat_of_reaction": 400.0,
+    "ins_ref_temperature": 0.0
+   },
+   "n_decks": 35
+  },
+  "PIR": {
+   "id": 3,
+   "ins_matl": "Insulation_VIRGIN",
+   "ins": {
+    "ins_specific_heat": 1.0672,
+    "ins_conductivity": 0.05,
+    "ins_density": 31.4,
+    "ins_heat_of_reaction": 0.0,
+    "ins_ref_temperature": 0.0
+   },
+   "n_decks": 41
+  },
+  "WC": {
+   "id": 4,
+   "ins_matl": "STEEL",
+   "ins": {
+    "ins_specific_heat": 0.46,
+    "ins_conductivity": 45.0,
+    "ins_density": 7850.0,
+    "ins_heat_of_reaction": 0.0,
+    "ins_ref_temperature": 0.0
+   },
+   "n_decks": 35
+  }
+ },
+ "observed": {
+  "ACM_A2|MW": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "ACM_A2|MWBC": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "ACM_A2|PF": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "ACM_A2|PIR": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "ACM_A2|WC": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "ACM_PE|MW": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "ACM_PE|MWBC": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "ACM_PE|PF": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "ACM_PE|PIR": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "ACM_PE|WC": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "AL|MW": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "AL|MWBC": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "AL|PF": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "AL|PIR": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "AL|WC": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "BRK|MW": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "BRK|MWBC": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "BRK|PF": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "BRK|PIR": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "BRK|WC": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "CDR|MW": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "CDR|MWBC": [
+   1,
+   2,
+   4,
+   5,
+   7
+  ],
+  "CDR|PF": [
+   0,
+   1,
+   2,
+   3,
+   6,
+   7
+  ],
+  "CDR|PIR": [
+   0,
+   3,
+   5,
+   6
+  ],
+  "CDR|WC": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "DCLG_Test1_adv|PIR": [
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "DCLG_Test3|PIR": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   7
+  ],
+  "DCLG_Test5|PIR": [
+   0
+  ],
+  "HPL|MW": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "HPL|MWBC": [
+   0,
+   3,
+   4,
+   5,
+   6
+  ],
+  "HPL|PF": [
+   1,
+   2,
+   5,
+   7
+  ],
+  "HPL|WC": [
+   0,
+   3,
+   6
+  ],
+  "OSB|MW": [
+   1,
+   2,
+   7
+  ],
+  "OSB|MWBC": [
+   1,
+   2,
+   7
+  ],
+  "OSB|PF": [
+   0,
+   3,
+   6
+  ],
+  "OSB|WC": [
+   4,
+   5
+  ],
+  "PLY|MW": [
+   0,
+   3,
+   6
+  ],
+  "PLY|MWBC": [
+   0,
+   3,
+   6
+  ],
+  "PLY|PF": [
+   4,
+   5
+  ],
+  "PLY|WC": [
+   1,
+   2,
+   7
+  ]
+ }
+}
