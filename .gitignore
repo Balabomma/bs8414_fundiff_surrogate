@@ -115,6 +115,39 @@ desktop.ini
 Desktop.ini
 $RECYCLE.BIN/
 
+# -- 60-sim corpus lineage: kept on the research machine, not published -----
+# These repositories publish the Part1 geometry-corpus surrogate. The older
+# 60-sim (cladding x HRR x mesh) model/train/evaluate lineage stays local: it
+# is a different corpus with a different target and split, and nothing in the
+# Part1 or app path imports any of it. Verified by import-closure analysis over
+# the Part1 and app entry points, not by filename.
+#
+# NOT listed here, deliberately, because they are load-bearing: model.py (the
+# Part1 model imports KANLinear / MLPLinear, TimeEncoding and MultiScaleConv
+# from it), and in bs8414_MLP_surrogate also config.py, data_loader.py,
+# train.py, evaluate.py, anchor_features.py and features_v*.py, which the
+# manuscript and parity scripts import. Ignoring those would publish a repo
+# that cannot run.
+#
+# Every name below exists only in bs8414_KAN_surrogate / bs8414_MLP_surrogate,
+# so these rules are inert in the other ten projects.
+model_v*.py
+train_v*.py
+train_baseline63.py
+evaluate_kan.py
+evaluate_v*.py
+validate_physics.py
+validate_physics_v*.py
+killer_excluded*.py
+br135_classification_v9.py
+bestofn_driver.py
+bestofn_v9_driver.py
+dump_per_sensor.py
+_br135.py
+_diag_growth_gate.py
+_ens.py
+_greedy.py
+
 # -- third-party measured test data: NOT redistributed --------------------
 # Measured DCLG / BS 8414 thermocouple traces supplied by a third party, and
 # the figure scripts that consume them. The surrogate work may compare against
