@@ -115,6 +115,20 @@ desktop.ini
 Desktop.ini
 $RECYCLE.BIN/
 
+# -- third-party measured test data: NOT redistributed --------------------
+# Measured DCLG / BS 8414 thermocouple traces supplied by a third party, and
+# the figure scripts that consume them. The surrogate work may compare against
+# them locally, but they are not this project's data to publish, so neither the
+# data nor the scripts that read it go into any repository. Nothing in the
+# training, evaluation, physics-gate or app path imports them. Inert in
+# projects that hold no such file.
+measured_traces.py
+measured_1003_1029.py
+measured_*.py
+origin_figures.py
+origin_figures_v1.py.bak
+archive/origin_figures*
+
 # ── agent working notes ───────────────────────────────────────────────────
 # CLAUDE.md is the working brief for this repo's own agent sessions: internal
 # conventions, non-negotiables and in-progress reasoning. It is not part of the
